@@ -35,6 +35,7 @@ function RootNavigator() {
       <Stack.Screen name="(auth)" />
       <Stack.Screen name="(tabs)" />
       <Stack.Screen name="starter/[id]" />
+      <Stack.Screen name="recipe/new" options={{ presentation: 'modal' }} />
     </Stack>
   );
 }

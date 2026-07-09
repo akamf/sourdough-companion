@@ -121,6 +121,13 @@ export default function StarterDetailScreen() {
           size="lg"
           style={styles.eventBtn}
         />
+        <AppButton
+          title="🔔"
+          variant="secondary"
+          size="lg"
+          onPress={() => router.push(`/starter/${id}/notifications`)}
+          style={styles.notifBtn}
+        />
       </View>
 
       {/* Timeline */}
@@ -213,6 +220,10 @@ const styles = StyleSheet.create({
   },
   eventBtn: {
     flex: 1,
+  },
+  notifBtn: {
+    width: 48,
+    paddingHorizontal: 0,
   },
   timelineSection: {
     gap: spacing.sm,

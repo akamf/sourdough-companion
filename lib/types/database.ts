@@ -25,6 +25,7 @@ export type Database = {
           display_name?: string | null;
           created_at?: string;
         };
+        Relationships: [];
       };
       starters: {
         Row: {
@@ -69,6 +70,7 @@ export type Database = {
           created_at?: string;
           updated_at?: string;
         };
+        Relationships: [];
       };
       feeding_logs: {
         Row: {
@@ -107,6 +109,7 @@ export type Database = {
           notes?: string | null;
           created_at?: string;
         };
+        Relationships: [];
       };
       timeline_events: {
         Row: {
@@ -148,6 +151,7 @@ export type Database = {
           rating?: number | null;
           created_at?: string;
         };
+        Relationships: [];
       };
       starter_readiness_checks: {
         Row: {
@@ -186,6 +190,7 @@ export type Database = {
           notes?: string | null;
           created_at?: string;
         };
+        Relationships: [];
       };
       recipes: {
         Row: {
@@ -233,6 +238,7 @@ export type Database = {
           created_at?: string;
           updated_at?: string;
         };
+        Relationships: [];
       };
       notification_settings: {
         Row: {
@@ -268,7 +274,10 @@ export type Database = {
           created_at?: string;
           updated_at?: string;
         };
+        Relationships: [];
       };
     };
+    Views: Record<string, never>;
+    Functions: Record<string, never>;
   };
 };

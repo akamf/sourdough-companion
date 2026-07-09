@@ -24,6 +24,7 @@ import { STARTER_STATUSES, STORAGE_MODES } from '@/lib/schemas/starter';
 import { spacing, radius } from '@/constants/spacing';
 import { colors } from '@/constants/colors';
 import { TimelineList } from '@/components/timeline/TimelineList';
+import { StarterGuidance } from '@/components/StarterGuidance';
 
 export default function StarterDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -130,6 +131,25 @@ export default function StarterDetailScreen() {
         />
       </View>
 
+      {/* Guidance */}
+      <StarterGuidance
+        starterName={starter.name}
+        startedAt={starter.started_at}
+        status={starter.status}
+        storageMode={starter.storage_mode}
+      />
+
+      {/* Readiness check shortcut */}
+      {(starter.status === 'starting' || starter.status === 'establishing') && (
+        <AppButton
+          title="Check readiness"
+          variant="secondary"
+          size="md"
+          onPress={() => router.push(`/starter/${id}/readiness`)}
+          style={styles.readinessBtn}
+        />
+      )}
+
       {/* Timeline */}
       <View style={styles.timelineSection}>
         <SectionHeader title="Timeline" />
@@ -224,6 +244,11 @@ const styles = StyleSheet.create({
   notifBtn: {
     width: 48,
     paddingHorizontal: 0,
+  },
+  readinessBtn: {
+    marginTop: spacing.sm,
+    marginBottom: spacing.sm,
+    alignSelf: 'flex-start',
   },
   timelineSection: {
     gap: spacing.sm,

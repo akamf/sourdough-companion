@@ -7,6 +7,7 @@ export default function StarterLayout() {
       <Stack.Screen name="feed" options={{ presentation: 'modal' }} />
       <Stack.Screen name="event" options={{ presentation: 'modal' }} />
       <Stack.Screen name="notifications" options={{ presentation: 'modal' }} />
+      <Stack.Screen name="readiness" options={{ presentation: 'modal' }} />
     </Stack>
   );
 }

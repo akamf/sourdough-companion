@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, KeyboardAvoidingView, Platform, Alert } from 'react-native';
 import { useRouter, Link } from 'expo-router';
+import * as Linking from 'expo-linking';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -39,6 +40,7 @@ export default function SignupScreen() {
       password: data.password,
       options: {
         data: { display_name: data.displayName },
+        emailRedirectTo: Linking.createURL('auth/callback'),
       },
     });
     setLoading(false);
